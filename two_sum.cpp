@@ -37,7 +37,7 @@ void hashing(vector<int>&arr, int target, int n){
 
 //Approach 3
 //TC: O(n log n)
-SC: O(1)
+//SC: O(1)
 void optimal(vector<int>&arr, int target, int n){
     sort(arr.begin(), arr.end());
     int left = 0, right = n-1;
