@@ -25,14 +25,12 @@ void bruteforce(vector<int>&arr, int target, int n){
 void hashing(vector<int>&arr, int target, int n){
     int need = 0;
     unordered_map<int, int> hash;
-    for(int x: arr){
-        hash[x]++;
-    }
     for(int i = 0; i<n; i++){
         need = target - arr[i];
-        if((hash.find(need) != hash.end()) && (need != arr[i] || hash[need] > 1)){
-            cout<<need<<" ";
+        if(hash.find(need) != hash.end()){
+            cout<<hash[need<<" "<<i<<endl;
         }
+        hash[arr[i]] = i;
     }
     return;
 }
