@@ -30,8 +30,8 @@ void hashing(vector<int>&arr, int target, int n){
     }
     for(int i = 0; i<n; i++){
         need = target - arr[i];
-        if(hash[need] != 0 && need != arr[i]){
-            cout<< need<<" ";
+        if((hash.find(need) != hash.end()) && (need != arr[i] || hash[need] > 1)){
+            cout<<need<<" ";
         }
     }
     return;
@@ -43,7 +43,7 @@ SC: O(1)
 void optimal(vector<int>&arr, int target, int n){
     sort(arr.begin(), arr.end());
     int left = 0, right = n-1;
-    for(int i = left; i<=right; i++){
+    while(left<right){
         if(arr[left] + arr[right] == target){
             cout<< arr[left]<<" "<<arr[right]<<endl;
             left++;
