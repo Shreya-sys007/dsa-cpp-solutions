@@ -56,3 +56,39 @@ int main() {
   }
   cout<<isfound;
 }
+
+//OPTIMAL APPROACH - BASED ON THE SAME IDEA OF NAIVE APPROACH
+//USING M2 STYLE
+//this uses two hash based vectors to store freq and simply store freq of each-pattern and m sized substring. 
+//Then compares ONLY freq not the chars. //cnt1 == cnt1
+
+bool aresame(vector<int> & cnt1, vector<int> &cnt2) {
+  if( cnt1 == cnt2) {
+    return true;
+  }
+  return false;
+}
+
+int main() {
+  string s1 = "geeksforgeeks";
+  string s2 = "frog";
+  int n = s1.size();
+  int m = s2.size();
+  vector<int>cnt1(26);
+  vector<int>cnt2(26);
+
+  for(int i = 0; i<m; i++){
+    cnt1[s1[i] - 'a']++;
+    cnt2[s2[i] -'a']++;
+  }
+  int isfound = 0;
+  for(int i = m; i<n; i++){
+    if(aresame(cnt1, cnt2)){
+          isfound = 1;
+          break;
+    }
+    cnt1[s1[i]-'a']++;
+    cnt1[s[i- m] -'a']++;
+  }
+    cout<<isfound;
+  }
