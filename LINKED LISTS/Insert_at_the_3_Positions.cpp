@@ -1,3 +1,7 @@
+//why did we use Node* head = NULL in begin and end case but made a whole LL in mid one?
+//Bcz if the LL is empty then insertion in begin or end is possible by simply adding up the val. In mid one, we need a val 
+//after which we need to insert the new_data
+
 #include<bits/stdc++.h>
 using namespace std;
 
