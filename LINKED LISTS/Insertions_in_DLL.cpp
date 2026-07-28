@@ -104,8 +104,10 @@ int main() {
         cout<<temp->data<<" ";
         temp = temp->next;
     }
-
 }
+
+//Add a node at the end in a DLL
+
 
 
 
